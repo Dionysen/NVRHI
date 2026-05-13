@@ -226,29 +226,50 @@ namespace nvrhi::utils
         }
     }
 
-	ShaderType ShaderStageFromString(const char* string)
-	{
-		if (string == "None")          return ShaderType::None;
-		if (string == "Compute")       return ShaderType::Compute;
-		if (string == "Vertex")        return ShaderType::Vertex;
-		if (string == "Hull")          return ShaderType::Hull;
-		if (string == "Domain")        return ShaderType::Domain;
-		if (string == "Geometry")      return ShaderType::Geometry;
-		if (string == "Pixel")         return ShaderType::Pixel;
-		if (string == "Amplification") return ShaderType::Amplification;
-		if (string == "Mesh")          return ShaderType::Mesh;
-		if (string == "AllGraphics")   return ShaderType::AllGraphics;
-		if (string == "RayGeneration") return ShaderType::RayGeneration;
-		if (string == "AnyHit")        return ShaderType::AnyHit;
-		if (string == "ClosestHit")    return ShaderType::ClosestHit;
-		if (string == "Miss")          return ShaderType::Miss;
-		if (string == "Intersection")  return ShaderType::Intersection;
-		if (string == "Callable")      return ShaderType::Callable;
-		if (string == "AllRayTracing") return ShaderType::AllRayTracing;
-		if (string == "All")           return ShaderType::All;
+    ShaderType ShaderStageFromString(const char *string) 
+    {
+        if (!string)
+            return ShaderType::None;
 
-		return ShaderType::None;
-	}
+        if (std::strcmp(string, "None") == 0)
+            return ShaderType::None;
+        if (std::strcmp(string, "Compute") == 0)
+            return ShaderType::Compute;
+        if (std::strcmp(string, "Vertex") == 0)
+            return ShaderType::Vertex;
+        if (std::strcmp(string, "Hull") == 0)
+            return ShaderType::Hull;
+        if (std::strcmp(string, "Domain") == 0)
+            return ShaderType::Domain;
+        if (std::strcmp(string, "Geometry") == 0)
+            return ShaderType::Geometry;
+        if (std::strcmp(string, "Pixel") == 0)
+            return ShaderType::Pixel;
+        if (std::strcmp(string, "Amplification") == 0)
+            return ShaderType::Amplification;
+        if (std::strcmp(string, "Mesh") == 0)
+            return ShaderType::Mesh;
+        if (std::strcmp(string, "AllGraphics") == 0)
+            return ShaderType::AllGraphics;
+        if (std::strcmp(string, "RayGeneration") == 0)
+            return ShaderType::RayGeneration;
+        if (std::strcmp(string, "AnyHit") == 0)
+            return ShaderType::AnyHit;
+        if (std::strcmp(string, "ClosestHit") == 0)
+            return ShaderType::ClosestHit;
+        if (std::strcmp(string, "Miss") == 0)
+            return ShaderType::Miss;
+        if (std::strcmp(string, "Intersection") == 0)
+            return ShaderType::Intersection;
+        if (std::strcmp(string, "Callable") == 0)
+            return ShaderType::Callable;
+        if (std::strcmp(string, "AllRayTracing") == 0)
+            return ShaderType::AllRayTracing;
+        if (std::strcmp(string, "All") == 0)
+            return ShaderType::All;
+
+        return ShaderType::None;
+    }
 
     const char* ResourceTypeToString(ResourceType type)
     {
